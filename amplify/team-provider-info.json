@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blog-dev-11715-authRole",
+      "UnauthRoleArn": "arn:aws:iam::283113750041:role/amplify-blog-dev-11715-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::283113750041:role/amplify-blog-dev-11715-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-blog-dev-11715-deployment",
+      "UnauthRoleName": "amplify-blog-dev-11715-unauthRole",
+      "StackName": "amplify-blog-dev-11715",
+      "StackId": "arn:aws:cloudformation:eu-west-1:283113750041:stack/amplify-blog-dev-11715/06925f80-2a48-11eb-b3e7-0a4b9b79e793",
+      "AmplifyAppId": "d3kt6lkaqfogwa"
+    },
+    "categories": {
+      "function": {
+        "toastyblogCreateAuthChallenge": {},
+        "toastyblogDefineAuthChallenge": {},
+        "toastyblogVerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": ""
+        }
+      },
+      "auth": {
+        "toastyblog": {}
+      }
+    }
+  }
+}

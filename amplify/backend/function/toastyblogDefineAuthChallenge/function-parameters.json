@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "captcha-define-challenge"
+  ],
+  "parentResource": "toastyblog",
+  "functionName": "toastyblogDefineAuthChallenge",
+  "resourceName": "toastyblogDefineAuthChallenge",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/home/toasty/.nodenv/versions/14.1.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/DefineAuthChallenge",
+  "triggerTemplate": "DefineAuthChallenge.json.ejs",
+  "roleName": "toastyblogDefineAuthChallenge",
+  "skipEdit": true,
+  "enableCors": false
+}

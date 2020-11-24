@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "captcha-verify"
+  ],
+  "parentResource": "toastyblog",
+  "functionName": "toastyblogVerifyAuthChallengeResponse",
+  "resourceName": "toastyblogVerifyAuthChallengeResponse",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/home/toasty/.nodenv/versions/14.1.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/VerifyAuthChallengeResponse",
+  "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
+  "roleName": "toastyblogVerifyAuthChallengeResponse",
+  "skipEdit": true,
+  "RECAPTCHASECRET": "",
+  "enableCors": false
+}
