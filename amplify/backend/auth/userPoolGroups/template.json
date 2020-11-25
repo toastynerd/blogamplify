@@ -1,0 +1,81 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "authtoastyblogUserPoolId": {
+            "Type": "String",
+            "Default": "authtoastyblogUserPoolId"
+        },
+        
+        "authtoastyblogAppClientID": {
+            "Type": "String",
+            "Default": "authtoastyblogAppClientID"
+        },
+        "authtoastyblogAppClientIDWeb": {
+            "Type": "String",
+            "Default": "authtoastyblogAppClientIDWeb"
+        },
+        "AuthRoleArn": {
+            "Type": "String"
+        },
+        "UnauthRoleArn": {
+            "Type": "String"
+        },
+        "env": {
+            "Type": "String"
+        }
+    },
+    "Conditions": {
+        "ShouldNotCreateEnvResources": {
+            "Fn::Equals": [
+                {
+                    "Ref": "env"
+                },
+                "NONE"
+            ]
+        }
+    },
+    "Resources": {
+    
+        "authorsGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "authors",
+              "Precedence" : 1,
+              
+              "UserPoolId" : {
+                "Ref": "authtoastyblogUserPoolId"
+              } 
+            }
+        },
+        
+    
+        "commentersGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "commenters",
+              "Precedence" : 2,
+              
+              "UserPoolId" : {
+                "Ref": "authtoastyblogUserPoolId"
+              } 
+            }
+        },
+        
+    
+        "readersGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "readers",
+              "Precedence" : 3,
+              
+              "UserPoolId" : {
+                "Ref": "authtoastyblogUserPoolId"
+              } 
+            }
+        },
+        
+    
+    
+    },
+    
+}

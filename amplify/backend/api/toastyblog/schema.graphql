@@ -1,26 +1,44 @@
-type Blog @model {
-  id: ID!
-  name: String!
-  posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
-}
-
-type Post @model @key(name: "byBlog", fields: ["blogID"]) {
+type Post 
+  @model 
+  @auth (
+      rules: [
+        { allow: groups, groups: ["authors"], operations: [create, read, update, delete] },
+        { allow: groups, groups: ["readers", "commenters"], operations: [read] }
+      ]
+  ) {
   id: ID!
   publishedOn: AWSDateTime
   title: String!
-  blogID: ID!
-  blog: Blog @connection(fields: ["blogID"])
+  content: String!
+  summary: String
   comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+  author: String!
 }
 
-type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
+type Comment 
+  @model 
+  @key(name: "byPost", fields: ["postID", "content"]) 
+  @auth (
+    rules: [
+      { allow: groups, groups: ["authors", "commenters"], operations: [create, read, update, delete] },
+      { allow: groups, groups: ["readers"], operations: [read] }
+    ]
+  ){
   id: ID!
   postID: ID!
   post: Post @connection(fields: ["postID"])
   content: String!
+  author: String!
 }
 
-type Page @model  {
+type Page @model  
+  @auth (
+    rules: [
+      { allow: groups, groups: ["authors"], operations: [create, read, update, delete] },
+      { allow: groups, groups: ["commenters", "readers"], operations: [read]}
+    ]
+  )
+  {
   id: ID!
   name: String!
   content: String

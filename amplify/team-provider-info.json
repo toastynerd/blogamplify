@@ -12,13 +12,6 @@
       "AmplifyAppId": "d3kt6lkaqfogwa"
     },
     "categories": {
-      "function": {
-        "toastyblogCreateAuthChallenge": {},
-        "toastyblogDefineAuthChallenge": {},
-        "toastyblogVerifyAuthChallengeResponse": {
-          "RECAPTCHASECRET": ""
-        }
-      },
       "auth": {
         "toastyblog": {}
       }

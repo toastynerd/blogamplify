@@ -47,47 +47,18 @@
     "usernameAttributes": [
         "email"
     ],
-    "userPoolGroups": true,
-    "adminQueries": true,
-    "triggers": "{\n  \"CreateAuthChallenge\": [\n    \"captcha-create-challenge\"\n  ],\n  \"DefineAuthChallenge\": [\n    \"captcha-define-challenge\"\n  ],\n  \"VerifyAuthChallengeResponse\": [\n    \"captcha-verify\"\n  ]\n}",
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{}",
     "hostedUI": false,
     "userPoolGroupList": [
         "authors",
         "commenters"
     ],
-    "adminQueryGroup": "authors",
     "serviceName": "Cognito",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "toastyblogCreateAuthChallenge",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        },
-        {
-            "category": "function",
-            "resourceName": "toastyblogDefineAuthChallenge",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        },
-        {
-            "category": "function",
-            "resourceName": "toastyblogVerifyAuthChallengeResponse",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        }
-    ]
+    "dependsOn": []
 }
